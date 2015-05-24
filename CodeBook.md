@@ -48,7 +48,32 @@ The input data containts the following data files:
 5. Appropriately label the data set with descriptive variable names.
 6. From data in step 4, create a second, independent tidy day set with the average of each variable for each activity and each subject.
 
+The features (variables) that use acronyms are renamed with more descriptive names.
+
+###For example:
+
+1.  **Acc** = Accelerometer
+2.  **Gyro** = Gyroscope
+3.  **^t** = Time
+4.  **^f** = Frequency
+5.  **Mag** = Magnitude
+
+| Column                             | Original Name               |
+| ----------------------------       | --------------------------- |
+| Activity                           |                             |
+| Subject                            |                             |
+| TimeBodyAccelerometerMean()-X      | tBodyAcc-mean()-X           |
+| TimeBodyGyroscopeMean()-X          | tBodyGyro-mean()-X          |
+| TimeBodyAccelerometerMagnitudeSTD()| tBodyAccMag-std()           |
+| FrequencyBodyAccelerometerMean()-X | fBodyAcc-mean()-X           |
+
 
 ## Output
 
 ```Tidy.txt``` is a space-delimited value file.  The header line contains the names of the variables.  It contains the mean and standard deviation values of the data contained in the input files.
+
+| column       | description                                              | type    |
+| ------------ | -------------------------------------------------------- | ------- |
+| Subject      | Identifies the subject                                   | integer |
+| Activity     | Label of the activity                                    | factor  |
+| MeanFeatures | Mean of variables by Subject + Activity provided in tidy | numeric |
